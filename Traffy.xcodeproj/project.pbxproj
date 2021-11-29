@@ -13,6 +13,8 @@
 		481D7CFB275412AD00284F6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 481D7CFA275412AD00284F6E /* Assets.xcassets */; };
 		481D7CFE275412AD00284F6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 481D7CFC275412AD00284F6E /* LaunchScreen.storyboard */; };
 		481D7D0927541CAD00284F6E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D0827541CAD00284F6E /* LoginViewController.swift */; };
+		481D7D0B2754C56200284F6E /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D0A2754C56200284F6E /* ResetPasswordViewController.swift */; };
+		481D7D0D2754CBBA00284F6E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D0C2754CBB700284F6E /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		481D7CFD275412AD00284F6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		481D7CFF275412AD00284F6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		481D7D0827541CAD00284F6E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		481D7D0A2754C56200284F6E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		481D7D0C2754CBB700284F6E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				481D7D0827541CAD00284F6E /* LoginViewController.swift */,
+				481D7D0A2754C56200284F6E /* ResetPasswordViewController.swift */,
+				481D7D0C2754CBB700284F6E /* RegisterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -163,8 +169,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				481D7D0927541CAD00284F6E /* LoginViewController.swift in Sources */,
+				481D7D0D2754CBBA00284F6E /* RegisterViewController.swift in Sources */,
 				481D7CF22754129A00284F6E /* AppDelegate.swift in Sources */,
 				481D7CF42754129A00284F6E /* SceneDelegate.swift in Sources */,
+				481D7D0B2754C56200284F6E /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
