@@ -90,11 +90,19 @@
 		481D7D0727541B6900284F6E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				481D7D0E2754DDEB00284F6E /* Authentication */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		481D7D0E2754DDEB00284F6E /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
 				481D7D0827541CAD00284F6E /* LoginViewController.swift */,
 				481D7D0A2754C56200284F6E /* ResetPasswordViewController.swift */,
 				481D7D0C2754CBB700284F6E /* RegisterViewController.swift */,
 			);
-			path = Controller;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
