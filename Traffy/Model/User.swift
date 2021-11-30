@@ -8,9 +8,9 @@
 import Foundation
 
 struct User: Codable {
-    var id: String
-    var profileImageURL: String
-    var username: String
+    let id: String
+    let profileImageURL: String
+    let username: String
     var masteredQuestionsNumber: Int = 0
     var discoveredSignsNumber: Int = 0
     
