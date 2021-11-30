@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextfieldView: UIView!
     @IBOutlet weak var passwordTextfieldView: UIView!
+    
+    @IBOutlet weak var emailTextfield: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
+    
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
@@ -24,15 +29,34 @@ class LoginViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        guard let email = emailTextfield.text, email != "" else {
+            showAlert(withMessage: "Proszę uzupełnić adres e-mail.")
+            return
+        }
+        guard let password = passwordTextfield.text, password != "" else {
+            showAlert(withMessage: "Proszę uzupełnić hasło.")
+            return
+        }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                switch AuthErrorCode(rawValue: error._code) {
+                case .wrongPassword:
+                    self.showAlert(withMessage: "Podane hasło jest nieprawidłowe.")
+                case .userNotFound:
+                    self.showAlert(withMessage: "Brak konta o podanym adresie e-mail.")
+                case .invalidEmail:
+                    self.showAlert(withMessage: "Podano niepoprawny adres e-mail.")
+                default:
+                    self.showAlert(withMessage: "Wystąpił nieznany błąd.")
+                }
+                return
+            }
+            
+            let tabBarView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarView") as! UITabBarController
+            self.present(tabBarView, animated: true, completion: nil)
+        }
     }
-    */
-
+    
 }

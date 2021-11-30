@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="wuZ-tu-KjN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="77Z-5W-FOF">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="tHc-Aj-CdS">
@@ -30,11 +30,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tHc-Aj-CdS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Gsk-aF-b8s"/>
-                            <constraint firstItem="wuZ-tu-KjN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Te3-ah-HOa"/>
-                            <constraint firstAttribute="bottom" secondItem="wuZ-tu-KjN" secondAttribute="bottom" id="aWV-9P-7MO"/>
-                            <constraint firstItem="wuZ-tu-KjN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h6l-9e-odZ"/>
+                            <constraint firstItem="77Z-5W-FOF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NAo-zo-Har"/>
+                            <constraint firstItem="77Z-5W-FOF" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="euN-bB-zCQ"/>
+                            <constraint firstItem="77Z-5W-FOF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hJG-SV-DOJ"/>
                             <constraint firstItem="tHc-Aj-CdS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hw4-93-D3W"/>
-                            <constraint firstItem="wuZ-tu-KjN" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="r8D-zI-CBF"/>
+                            <constraint firstAttribute="bottom" secondItem="77Z-5W-FOF" secondAttribute="bottom" id="k4R-XQ-cFS"/>
                         </constraints>
                     </view>
                 </viewController>
