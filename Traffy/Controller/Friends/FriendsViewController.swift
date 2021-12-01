@@ -1,14 +1,14 @@
 //
-//  StartViewController.swift
+//  FriendsViewController.swift
 //  Traffy
 //
-//  Created by Robert Pelka on 29/11/2021.
+//  Created by Robert Pelka on 01/12/2021.
 //
 
 import UIKit
 import Firebase
 
-class StartViewController: UIViewController {
+class FriendsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,6 @@ class StartViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()
