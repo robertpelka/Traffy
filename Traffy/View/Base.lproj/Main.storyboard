@@ -316,18 +316,18 @@
                                 <rect key="frame" x="25" y="143" width="340" height="593"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Osg-vd-nQo">
-                                        <rect key="frame" x="98.333333333333329" y="0.0" width="143.33333333333337" height="134"/>
+                                        <rect key="frame" x="130" y="0.0" width="80" height="134"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="SI1-be-UBB">
-                                                <rect key="frame" x="31.666666666666671" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="8NG-b1-gi9"/>
                                                     <constraint firstAttribute="width" constant="80" id="Suv-Ea-5aA"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Witaj, Robert!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-2K-CTc">
-                                                <rect key="frame" x="0.0" y="80" width="143.33333333333334" height="54"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Witaj!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-2K-CTc">
+                                                <rect key="frame" x="9.3333333333333393" y="80" width="61.666666666666657" height="54"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -437,6 +437,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Zacznij Naukę">
                                                     <fontDescription key="titleFontDescription" type="system" weight="light" pointSize="22"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="startLearningButtonPressed:" destination="NzV-MO-uZn" eventType="touchUpInside" id="aPc-7q-7Ob"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsF-Ys-B4o">
                                                 <rect key="frame" x="0.0" y="74" width="340" height="60"/>
@@ -449,6 +452,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Rozpoznaj Znak">
                                                     <fontDescription key="titleFontDescription" type="system" weight="light" pointSize="22"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="recognizeSignButtonPressed:" destination="NzV-MO-uZn" eventType="touchUpInside" id="WaR-pH-bJW"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -491,8 +497,13 @@
                     <tabBarItem key="tabBarItem" title="Start" image="house" catalog="system" selectedImage="house.fill" id="Dfo-JW-YrT"/>
                     <connections>
                         <outlet property="profileImage" destination="SI1-be-UBB" id="ZQd-gZ-P7x"/>
+                        <outlet property="questionsCounterLabel" destination="Hxf-OX-kcj" id="Y68-v4-4fd"/>
+                        <outlet property="questionsProgressView" destination="RrP-sm-KhO" id="oe0-tk-YOq"/>
                         <outlet property="recognizeSignButton" destination="EsF-Ys-B4o" id="dIc-r0-u6T"/>
+                        <outlet property="signsCounterLabel" destination="yBB-JA-WdY" id="CA3-m9-uGF"/>
+                        <outlet property="signsProgressView" destination="hGC-UJ-s8P" id="PmM-zv-hXF"/>
                         <outlet property="startLearningButton" destination="Nqa-pg-8a8" id="rgZ-vV-jru"/>
+                        <outlet property="usernameLabel" destination="bXm-2K-CTc" id="iOJ-Cs-u0n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APd-iX-AAt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
