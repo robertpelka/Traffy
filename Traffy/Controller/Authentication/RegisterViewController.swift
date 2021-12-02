@@ -30,6 +30,10 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        prepareView()
+    }
+    
+    func prepareView() {
         plusButtonImage.layer.cornerRadius = plusButtonImage.frame.width / 2
         emailTextfieldView.layer.cornerRadius = 10
         passwordTextfieldView.layer.cornerRadius = 10

@@ -20,7 +20,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        prepareView()
+    }
+    
+    func prepareView() {
         emailTextfieldView.layer.cornerRadius = 10
         passwordTextfieldView.layer.cornerRadius = 10
         loginButton.layer.cornerRadius = 15

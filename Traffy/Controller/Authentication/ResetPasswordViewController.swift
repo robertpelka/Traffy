@@ -17,6 +17,10 @@ class ResetPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        prepareView()
+    }
+    
+    func prepareView() {
         emailTextfieldView.layer.cornerRadius = 10
         resetPasswordButton.layer.cornerRadius = 15
         

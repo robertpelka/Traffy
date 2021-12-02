@@ -37,6 +37,24 @@ extension UIImage {
     }
 }
 
+extension UIImageView {
+    func load(url: URL?) {
+        guard let url = url else {
+            print("DEBUG: Error loading image, the URL is nil.")
+            return
+        }
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}
+
 extension UIViewController {
     func showAlert(withMessage message: String, andTitle title: String = "Błąd") {
         DispatchQueue.main.async {
