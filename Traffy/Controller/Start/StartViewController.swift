@@ -79,6 +79,7 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func startLearningButtonPressed(_ sender: UIButton) {
+        tabBarController?.selectedIndex = 1
     }
     
     @IBAction func recognizeSignButtonPressed(_ sender: UIButton) {
