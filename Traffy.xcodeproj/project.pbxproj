@@ -28,6 +28,7 @@
 		481D7D282758194000284F6E /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D272758194000284F6E /* FriendsViewController.swift */; };
 		481D7D2D27581C2700284F6E /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D2C27581C2700284F6E /* CustomProgressView.swift */; };
 		481D7D34275A23F900284F6E /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D33275A23F900284F6E /* LearnViewController.swift */; };
+		481D7D39275A826000284F6E /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D38275A825F00284F6E /* CategoriesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		481D7D272758194000284F6E /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		481D7D2C27581C2700284F6E /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		481D7D33275A23F900284F6E /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
+		481D7D38275A825F00284F6E /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				481D7D0E2754DDEB00284F6E /* Authentication */,
 				481D7D262758189000284F6E /* Start */,
 				481D7D30275A1B6700284F6E /* Learn */,
+				481D7D37275A81E700284F6E /* Signs */,
 				481D7D252758184400284F6E /* Friends */,
 				481D7D2927581B8100284F6E /* Items */,
 			);
@@ -178,6 +181,14 @@
 				481D7D33275A23F900284F6E /* LearnViewController.swift */,
 			);
 			path = Learn;
+			sourceTree = "<group>";
+		};
+		481D7D37275A81E700284F6E /* Signs */ = {
+			isa = PBXGroup;
+			children = (
+				481D7D38275A825F00284F6E /* CategoriesViewController.swift */,
+			);
+			path = Signs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 				481D7D22275602A900284F6E /* ImageUploader.swift in Sources */,
 				481D7CF42754129A00284F6E /* SceneDelegate.swift in Sources */,
 				481D7D0B2754C56200284F6E /* ResetPasswordViewController.swift in Sources */,
+				481D7D39275A826000284F6E /* CategoriesViewController.swift in Sources */,
 				481D7D1B2754FB6A00284F6E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
