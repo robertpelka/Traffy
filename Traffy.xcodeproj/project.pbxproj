@@ -27,6 +27,7 @@
 		481D7D242756031C00284F6E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D232756031C00284F6E /* Extensions.swift */; };
 		481D7D282758194000284F6E /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D272758194000284F6E /* FriendsViewController.swift */; };
 		481D7D2D27581C2700284F6E /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D2C27581C2700284F6E /* CustomProgressView.swift */; };
+		481D7D34275A23F900284F6E /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D33275A23F900284F6E /* LearnViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		481D7D232756031C00284F6E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		481D7D272758194000284F6E /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		481D7D2C27581C2700284F6E /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
+		481D7D33275A23F900284F6E /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				481D7D0E2754DDEB00284F6E /* Authentication */,
 				481D7D262758189000284F6E /* Start */,
+				481D7D30275A1B6700284F6E /* Learn */,
 				481D7D252758184400284F6E /* Friends */,
 				481D7D2927581B8100284F6E /* Items */,
 			);
@@ -167,6 +170,14 @@
 				481D7D2C27581C2700284F6E /* CustomProgressView.swift */,
 			);
 			path = Items;
+			sourceTree = "<group>";
+		};
+		481D7D30275A1B6700284F6E /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				481D7D33275A23F900284F6E /* LearnViewController.swift */,
+			);
+			path = Learn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +266,7 @@
 				481D7D2D27581C2700284F6E /* CustomProgressView.swift in Sources */,
 				481D7D0D2754CBBA00284F6E /* RegisterViewController.swift in Sources */,
 				481D7CF22754129A00284F6E /* AppDelegate.swift in Sources */,
+				481D7D34275A23F900284F6E /* LearnViewController.swift in Sources */,
 				481D7D1F27558F1500284F6E /* User.swift in Sources */,
 				481D7D242756031C00284F6E /* Extensions.swift in Sources */,
 				481D7D282758194000284F6E /* FriendsViewController.swift in Sources */,

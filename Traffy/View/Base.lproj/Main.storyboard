@@ -211,18 +211,159 @@
         <!--Nauka-->
         <scene sceneID="v7B-hS-XMh">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Igj-wS-3GG" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Igj-wS-3GG" customClass="LearnViewController" customModule="Traffy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vDz-6x-SOK">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pJC-FV-zgU">
+                                <rect key="frame" x="140" y="54" width="110" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="5EL-Z1-7g8"/>
+                                    <constraint firstAttribute="height" constant="39" id="7CP-lf-CTb"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hGQ-hh-qom">
+                                <rect key="frame" x="25" y="143" width="340" height="593"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tea-RQ-0hm">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="47"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stopień opanowania poniższego pytania" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo1-MX-80L">
+                                                <rect key="frame" x="0.0" y="0.0" width="224" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="146" id="KWK-PQ-bTy"/>
+                                                    <constraint firstAttribute="height" constant="47" id="nW9-HK-rep"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                <color key="textColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="SIi-Rg-xTx">
+                                                <rect key="frame" x="224" y="0.0" width="116" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="116" id="5aS-LV-FpQ"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="M3n-CY-vb1">
+                                        <rect key="frame" x="0.0" y="47.000000000000014" width="340" height="196.33333333333337"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="M3n-CY-vb1" secondAttribute="height" multiplier="329:190" id="Xai-SC-Ihc"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Czym należy poprzedzić uciskanie klatki piersiowej u niemowlęcia, które zostało ułożone na stole lub podłodze?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="sX3-i6-hqc">
+                                        <rect key="frame" x="0.0" y="243.33333333333331" width="340" height="145.66666666666669"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="85" id="Cid-qF-KDa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="gny-fq-e49">
+                                        <rect key="frame" x="0.0" y="389" width="340" height="204"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g4W-e7-unH">
+                                                <rect key="frame" x="0.0" y="0.0" width="340" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="EAV-z7-WMh"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment>
+                                                            <string key="content">Podłożeniem pod jego plecy pieluchy czy ręczniczka, tak by czoło, broda i klatka piersiowa dziecka znajdowały się w jednej linii.</string>
+                                                            <attributes>
+                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <font key="NSFont" metaFont="system" size="15"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="plain" titleAlignment="center">
+                                                    <string key="title">Podłożeniem pod jego plecy pieluchy czy ręczniczka, tak by czoło, broda i klatka piersiowa dziecka znajdowały się w jednej linii.</string>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="aAnswerButtonPressed:" destination="Igj-wS-3GG" eventType="touchUpInside" id="1p8-mM-LAk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Man-yd-vAn">
+                                                <rect key="frame" x="0.0" y="72" width="340" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="edZ-9I-Afm"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <string key="title">Podłożeniem pod jego plecy pieluchy czy ręczniczka, tak by czoło, broda i klatka piersiowa dziecka znajdowały się w jednej linii.</string>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="bAnswerButtonPressed:" destination="Igj-wS-3GG" eventType="touchUpInside" id="8Tj-Qo-eOF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqJ-Kj-ttt">
+                                                <rect key="frame" x="0.0" y="144" width="340" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="BL3-63-NxJ"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <string key="title">Podłożeniem pod jego plecy pieluchy czy ręczniczka, tak by czoło, broda i klatka piersiowa dziecka znajdowały się w jednej linii.</string>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="cAnswerButtonPressed:" destination="Igj-wS-3GG" eventType="touchUpInside" id="tdC-qv-adp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sX3-i6-hqc" secondAttribute="trailing" id="7fa-GN-XO3"/>
+                                    <constraint firstAttribute="trailing" secondItem="gny-fq-e49" secondAttribute="trailing" id="EgC-vo-ZZ0"/>
+                                    <constraint firstItem="sX3-i6-hqc" firstAttribute="leading" secondItem="hGQ-hh-qom" secondAttribute="leading" id="Gpk-Ia-jlE"/>
+                                    <constraint firstItem="M3n-CY-vb1" firstAttribute="leading" secondItem="hGQ-hh-qom" secondAttribute="leading" id="IES-tP-5Ix"/>
+                                    <constraint firstAttribute="trailing" secondItem="M3n-CY-vb1" secondAttribute="trailing" id="JQM-l3-dln"/>
+                                    <constraint firstAttribute="trailing" secondItem="tea-RQ-0hm" secondAttribute="trailing" id="WnD-Qg-pkc"/>
+                                    <constraint firstItem="gny-fq-e49" firstAttribute="leading" secondItem="hGQ-hh-qom" secondAttribute="leading" id="bEo-h8-dBr"/>
+                                    <constraint firstItem="tea-RQ-0hm" firstAttribute="leading" secondItem="hGQ-hh-qom" secondAttribute="leading" id="bO0-x4-reg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sSa-XS-7z5"/>
                         <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hGQ-hh-qom" firstAttribute="top" relation="lessThanOrEqual" secondItem="pJC-FV-zgU" secondAttribute="bottom" constant="50" id="5DU-gN-CAe"/>
+                            <constraint firstItem="hGQ-hh-qom" firstAttribute="leading" secondItem="sSa-XS-7z5" secondAttribute="leading" constant="25" id="PNf-Tk-iyC"/>
+                            <constraint firstItem="pJC-FV-zgU" firstAttribute="centerX" secondItem="hGQ-hh-qom" secondAttribute="centerX" id="aUm-PQ-cdC"/>
+                            <constraint firstItem="sSa-XS-7z5" firstAttribute="bottom" secondItem="hGQ-hh-qom" secondAttribute="bottom" constant="25" id="hcA-wc-ts3"/>
+                            <constraint firstItem="pJC-FV-zgU" firstAttribute="top" secondItem="sSa-XS-7z5" secondAttribute="top" constant="10" id="kdN-1J-n7W"/>
+                            <constraint firstItem="sSa-XS-7z5" firstAttribute="trailing" secondItem="hGQ-hh-qom" secondAttribute="trailing" constant="25" id="vst-yN-quz"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Nauka" image="graduationcap" catalog="system" selectedImage="graduationcap.fill" id="792-xD-zV2"/>
+                    <connections>
+                        <outlet property="aAnswerButton" destination="g4W-e7-unH" id="mna-ku-E8d"/>
+                        <outlet property="bAnswerButton" destination="Man-yd-vAn" id="gC9-UZ-HHO"/>
+                        <outlet property="cAnswerButton" destination="dqJ-Kj-ttt" id="TfJ-If-ZLo"/>
+                        <outlet property="levelOfMasteryImage" destination="SIi-Rg-xTx" id="BxG-39-0ey"/>
+                        <outlet property="questionImage" destination="M3n-CY-vb1" id="0ph-us-D39"/>
+                        <outlet property="questionLabel" destination="sX3-i6-hqc" id="Jz3-Br-22x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wra-9L-CPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2457" y="-274"/>
+            <point key="canvasLocation" x="2456.9230769230767" y="-274.4075829383886"/>
         </scene>
         <!--Znajomi-->
         <scene sceneID="Bk1-wH-Xor">
@@ -934,15 +1075,17 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="H1x-CD-PvR"/>
+        <segue reference="Zn6-Am-Khe"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="0" width="116" height="20"/>
         <image name="background" width="375" height="812"/>
         <image name="envelope.fill" catalog="system" width="128" height="93"/>
         <image name="graduationcap" catalog="system" width="128" height="106"/>
         <image name="graduationcap.fill" catalog="system" width="128" height="108"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="imagePlaceholder" width="329" height="190"/>
         <image name="key.fill" catalog="system" width="83" height="128"/>
         <image name="logo" width="145.66667175292969" height="50.666667938232422"/>
         <image name="parkingsign.circle" catalog="system" width="128" height="121"/>
