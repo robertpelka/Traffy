@@ -254,7 +254,7 @@
                                             <constraint firstAttribute="width" secondItem="M3n-CY-vb1" secondAttribute="height" multiplier="329:190" id="Xai-SC-Ihc"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Czym należy poprzedzić uciskanie klatki piersiowej u niemowlęcia, które zostało ułożone na stole lub podłodze?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="sX3-i6-hqc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wczytuję pytanie..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="sX3-i6-hqc">
                                         <rect key="frame" x="0.0" y="251.33333333333331" width="340" height="147.66666666666669"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="85" id="Cid-qF-KDa"/>

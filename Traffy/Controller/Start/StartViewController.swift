@@ -37,12 +37,12 @@ class StartViewController: UIViewController {
     }
     
     func fetchUser() {
-        guard let userID = Auth.auth().currentUser?.uid else {
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
             print("DEBUG: Error getting current user id.")
             return
         }
         
-        K.Collections.users.document(userID).addSnapshotListener { snapshot, error in
+        K.Collections.users.document(currentUserID).addSnapshotListener { snapshot, error in
             if let error = error {
                 print("DEBUG: Error fetching current user: \(error.localizedDescription)")
             }
@@ -52,7 +52,7 @@ class StartViewController: UIViewController {
                 user = try snapshot?.data(as: User.self)
             }
             catch let error {
-                print("DEBUG: Error converting snapshot to User type: \(error.localizedDescription)")
+                print("DEBUG: Error converting document to User type: \(error.localizedDescription)")
                 return
             }
             

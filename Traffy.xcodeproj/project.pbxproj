@@ -29,6 +29,8 @@
 		481D7D2D27581C2700284F6E /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D2C27581C2700284F6E /* CustomProgressView.swift */; };
 		481D7D34275A23F900284F6E /* LearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D33275A23F900284F6E /* LearnViewController.swift */; };
 		481D7D39275A826000284F6E /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D38275A825F00284F6E /* CategoriesViewController.swift */; };
+		481D7D3B275BB15F00284F6E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D3A275BB15300284F6E /* Question.swift */; };
+		481D7D3D275BB7DF00284F6E /* AnsweredQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D3C275BB7DF00284F6E /* AnsweredQuestion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		481D7D2C27581C2700284F6E /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		481D7D33275A23F900284F6E /* LearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController.swift; sourceTree = "<group>"; };
 		481D7D38275A825F00284F6E /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		481D7D3A275BB15300284F6E /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		481D7D3C275BB7DF00284F6E /* AnsweredQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsweredQuestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				481D7D1E27558F1500284F6E /* User.swift */,
+				481D7D3A275BB15300284F6E /* Question.swift */,
+				481D7D3C275BB7DF00284F6E /* AnsweredQuestion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -272,7 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				481D7D3B275BB15F00284F6E /* Question.swift in Sources */,
 				481D7D0927541CAD00284F6E /* LoginViewController.swift in Sources */,
+				481D7D3D275BB7DF00284F6E /* AnsweredQuestion.swift in Sources */,
 				481D7D1D2755432700284F6E /* StartViewController.swift in Sources */,
 				481D7D2D27581C2700284F6E /* CustomProgressView.swift in Sources */,
 				481D7D0D2754CBBA00284F6E /* RegisterViewController.swift in Sources */,

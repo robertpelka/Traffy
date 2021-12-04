@@ -11,5 +11,6 @@ import Firebase
 struct K {
     struct Collections {
         static let users = Firestore.firestore().collection("users")
+        static let questions = Firestore.firestore().collection("questions")
     }
 }
