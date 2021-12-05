@@ -43,10 +43,18 @@ extension UIImageView {
             print("DEBUG: Error loading image, the URL is nil.")
             return
         }
+        
+        self.image = UIImage(named: "loadingImageBackground")
+        let indicatorView = UIActivityIndicatorView(style: .large)
+        indicatorView.center = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
+        indicatorView.startAnimating()
+        self.addSubview(indicatorView)
+        
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
+                        indicatorView.removeFromSuperview()
                         self?.image = image
                     }
                 }

@@ -248,7 +248,7 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="M3n-CY-vb1">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingImageBackground" translatesAutoresizingMaskIntoConstraints="NO" id="M3n-CY-vb1">
                                         <rect key="frame" x="0.0" y="55.000000000000014" width="340" height="196.33333333333337"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="M3n-CY-vb1" secondAttribute="height" multiplier="329:190" id="Xai-SC-Ihc"/>
@@ -1325,9 +1325,9 @@
         <image name="graduationcap.fill" catalog="system" width="128" height="108"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="imagePlaceholder" width="329" height="190"/>
         <image name="informacyjne" width="28" height="28"/>
         <image name="key.fill" catalog="system" width="83" height="128"/>
+        <image name="loadingImageBackground" width="329" height="190"/>
         <image name="logo" width="145.66667175292969" height="50.666667938232422"/>
         <image name="nakazu" width="28" height="28"/>
         <image name="ostrzegawcze" width="31" height="28"/>
