@@ -7,9 +7,10 @@
 
 import UIKit
 import Firebase
+import SwiftUI
 
 class LearnViewController: UIViewController {
-
+    
     @IBOutlet weak var levelOfMasteryImage: UIImageView!
     @IBOutlet weak var questionImage: UIImageView!
     @IBOutlet weak var questionLabel: UILabel!
@@ -26,10 +27,12 @@ class LearnViewController: UIViewController {
     
     var masteredQuestionsIDs = [Int]()
     var questions = [Question]()
+    var currentQuestion: Question?
+    var tapGesture = UITapGestureRecognizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         prepareView()
         fetchQuestions {
             self.displayRandomQuestion()
@@ -49,28 +52,115 @@ class LearnViewController: UIViewController {
         aAnswerButton.titleLabel?.textAlignment = .center
         bAnswerButton.titleLabel?.textAlignment = .center
         cAnswerButton.titleLabel?.textAlignment = .center
+        
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.resetButtons(_:)))
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.isEnabled = false
     }
     
     @IBAction func trueAnswerButtonPressed(_ sender: UIButton) {
-        displayRandomQuestion()
+        lockButtons()
+        if currentQuestion?.correctAnswer == "T" {
+            animate(button: sender, to: UIColor(named: "green"))
+        }
+        else {
+            animate(button: sender, to: UIColor(named: "red"))
+            showGoodAnwer()
+        }
     }
     
     @IBAction func falseAnswerButtonPressed(_ sender: UIButton) {
-        displayRandomQuestion()
+        lockButtons()
+        if currentQuestion?.correctAnswer == "N" {
+            animate(button: sender, to: UIColor(named: "green"))
+        }
+        else {
+            animate(button: sender, to: UIColor(named: "red"))
+            showGoodAnwer()
+        }
     }
     
     @IBAction func aAnswerButtonPressed(_ sender: UIButton) {
-        displayRandomQuestion()
+        lockButtons()
+        if currentQuestion?.correctAnswer == "A" {
+            animate(button: sender, to: UIColor(named: "green"))
+        }
+        else {
+            animate(button: sender, to: UIColor(named: "red"))
+            showGoodAnwer()
+        }
     }
     
     @IBAction func bAnswerButtonPressed(_ sender: UIButton) {
-        displayRandomQuestion()
+        lockButtons()
+        if currentQuestion?.correctAnswer == "B" {
+            animate(button: sender, to: UIColor(named: "green"))
+        }
+        else {
+            animate(button: sender, to: UIColor(named: "red"))
+            showGoodAnwer()
+        }
     }
     
     @IBAction func cAnswerButtonPressed(_ sender: UIButton) {
-        displayRandomQuestion()
+        lockButtons()
+        if currentQuestion?.correctAnswer == "C" {
+            animate(button: sender, to: UIColor(named: "green"))
+        }
+        else {
+            animate(button: sender, to: UIColor(named: "red"))
+            showGoodAnwer()
+        }
     }
     
+    func showGoodAnwer() {
+        switch self.currentQuestion?.correctAnswer {
+        case "T":
+            self.animate(button: trueAnswerButton, to: UIColor(named: "green"))
+        case "N":
+            self.animate(button: falseAnswerButton, to: UIColor(named: "green"))
+        case "A":
+            self.animate(button: aAnswerButton, to: UIColor(named: "green"))
+        case "B":
+            self.animate(button: bAnswerButton, to: UIColor(named: "green"))
+        case "C":
+            self.animate(button: cAnswerButton, to: UIColor(named: "green"))
+        default:
+            break
+        }
+    }
+    
+    func lockButtons() {
+        trueAnswerButton.isUserInteractionEnabled = false
+        falseAnswerButton.isUserInteractionEnabled = false
+        
+        aAnswerButton.isUserInteractionEnabled = false
+        bAnswerButton.isUserInteractionEnabled = false
+        cAnswerButton.isUserInteractionEnabled = false
+        
+        tapGesture.isEnabled = true
+    }
+    
+    @objc func resetButtons(_ sender: UITapGestureRecognizer? = nil) {
+        trueAnswerButton.isUserInteractionEnabled = true
+        falseAnswerButton.isUserInteractionEnabled = true
+        
+        aAnswerButton.isUserInteractionEnabled = true
+        bAnswerButton.isUserInteractionEnabled = true
+        cAnswerButton.isUserInteractionEnabled = true
+        
+        trueAnswerButton.backgroundColor = UIColor.white
+        falseAnswerButton.backgroundColor = UIColor.white
+        
+        aAnswerButton.backgroundColor = UIColor.white
+        bAnswerButton.backgroundColor = UIColor.white
+        cAnswerButton.backgroundColor = UIColor.white
+        
+        displayRandomQuestion()
+        
+        tapGesture.isEnabled = false
+    }
+
     func showTrueFalseAnswerButtons() {
         trueFalseButtonsView.isHidden = false
         abcButtonsView.isHidden = true
@@ -83,6 +173,7 @@ class LearnViewController: UIViewController {
     
     func displayRandomQuestion() {
         guard let randomQuestion = questions.randomElement() else { return }
+        currentQuestion = randomQuestion
         
         if randomQuestion.image == "" {
             self.questionImage.image = UIImage(named: "imagePlaceholder")
@@ -165,6 +256,12 @@ class LearnViewController: UIViewController {
                 }
             }
             completion()
+        }
+    }
+    
+    func animate(button: UIButton, to color: UIColor?) {
+        UIView.animate(withDuration: 0.5) {
+            button.backgroundColor = color
         }
     }
     
