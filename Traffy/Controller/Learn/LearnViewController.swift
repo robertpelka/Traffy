@@ -88,15 +88,7 @@ class LearnViewController: UIViewController {
             self.questionImage.image = UIImage(named: "imagePlaceholder")
         }
         else {
-            let storageRef = Storage.storage().reference()
-            storageRef.child("questionImages/\(randomQuestion.image)").downloadURL { url, error in
-                if let error = error {
-                    print("DEBUG: Error getting question image url: \(error.localizedDescription)")
-                }
-                else {
-                    self.questionImage.load(url: url)
-                }
-            }
+            self.questionImage.load(url: URL(string: randomQuestion.image))
         }
         
         questionLabel.text = randomQuestion.question
