@@ -16,4 +16,6 @@ struct Question: Codable {
     let answerB: String
     let answerC: String
     let correctAnswer: String
+    
+    var masteryLevel: Int?
 }

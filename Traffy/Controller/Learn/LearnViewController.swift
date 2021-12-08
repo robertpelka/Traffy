@@ -25,17 +25,18 @@ class LearnViewController: UIViewController {
     @IBOutlet weak var trueFalseButtonsView: UIStackView!
     @IBOutlet weak var abcButtonsView: UIStackView!
     
-    var masteredQuestionsIDs = [Int]()
     var questions = [Question]()
-    var currentQuestion: Question?
+    var currentQuestionIndex = 0
+    var lastFetchedQuestionIndex = 0
     var tapGesture = UITapGestureRecognizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         prepareView()
-        fetchQuestions {
+        fetchQuestions(limitTo: 2) {
             self.displayRandomQuestion()
+            self.unlockButtons()
         }
     }
     
@@ -56,75 +57,87 @@ class LearnViewController: UIViewController {
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.resetButtons(_:)))
         view.addGestureRecognizer(tapGesture)
         tapGesture.isEnabled = false
+        
+        lockButtons()
     }
     
     @IBAction func trueAnswerButtonPressed(_ sender: UIButton) {
         lockButtons()
-        if currentQuestion?.correctAnswer == "T" {
+        if questions[currentQuestionIndex].correctAnswer == "T" {
             animate(button: sender, to: UIColor(named: "green"))
+            increaseLevelOfMastery()
         }
         else {
             animate(button: sender, to: UIColor(named: "red"))
             showGoodAnwer()
+            decreaseLevelOfMastery()
         }
     }
     
     @IBAction func falseAnswerButtonPressed(_ sender: UIButton) {
         lockButtons()
-        if currentQuestion?.correctAnswer == "N" {
+        if questions[currentQuestionIndex].correctAnswer == "N" {
             animate(button: sender, to: UIColor(named: "green"))
+            increaseLevelOfMastery()
         }
         else {
             animate(button: sender, to: UIColor(named: "red"))
             showGoodAnwer()
+            decreaseLevelOfMastery()
         }
     }
     
     @IBAction func aAnswerButtonPressed(_ sender: UIButton) {
         lockButtons()
-        if currentQuestion?.correctAnswer == "A" {
+        if questions[currentQuestionIndex].correctAnswer == "A" {
             animate(button: sender, to: UIColor(named: "green"))
+            increaseLevelOfMastery()
         }
         else {
             animate(button: sender, to: UIColor(named: "red"))
             showGoodAnwer()
+            decreaseLevelOfMastery()
         }
     }
     
     @IBAction func bAnswerButtonPressed(_ sender: UIButton) {
         lockButtons()
-        if currentQuestion?.correctAnswer == "B" {
+        if questions[currentQuestionIndex].correctAnswer == "B" {
             animate(button: sender, to: UIColor(named: "green"))
+            increaseLevelOfMastery()
         }
         else {
             animate(button: sender, to: UIColor(named: "red"))
             showGoodAnwer()
+            decreaseLevelOfMastery()
         }
     }
     
     @IBAction func cAnswerButtonPressed(_ sender: UIButton) {
         lockButtons()
-        if currentQuestion?.correctAnswer == "C" {
+        if questions[currentQuestionIndex].correctAnswer == "C" {
             animate(button: sender, to: UIColor(named: "green"))
+            increaseLevelOfMastery()
         }
         else {
             animate(button: sender, to: UIColor(named: "red"))
             showGoodAnwer()
+            decreaseLevelOfMastery()
         }
     }
     
     func showGoodAnwer() {
-        switch self.currentQuestion?.correctAnswer {
+        switch self.questions[currentQuestionIndex].correctAnswer {
         case "T":
-            self.animate(button: trueAnswerButton, to: UIColor(named: "green"))
+            self.animate(button: trueAnswerButton, to: UIColor(named: "green"), delay: 0.5)
         case "N":
-            self.animate(button: falseAnswerButton, to: UIColor(named: "green"))
+            self.animate(button: falseAnswerButton, to: UIColor(named: "green"), delay: 0.5)
         case "A":
-            self.animate(button: aAnswerButton, to: UIColor(named: "green"))
+            self.animate(button: aAnswerButton, to: UIColor(named: "green"), delay: 0.5)
         case "B":
-            self.animate(button: bAnswerButton, to: UIColor(named: "green"))
+            self.animate(button: bAnswerButton, to: UIColor(named: "green"), delay: 0.5)
         case "C":
-            self.animate(button: cAnswerButton, to: UIColor(named: "green"))
+            self.animate(button: cAnswerButton, to: UIColor(named: "green"), delay: 0.5)
         default:
             break
         }
@@ -137,17 +150,19 @@ class LearnViewController: UIViewController {
         aAnswerButton.isUserInteractionEnabled = false
         bAnswerButton.isUserInteractionEnabled = false
         cAnswerButton.isUserInteractionEnabled = false
-        
-        tapGesture.isEnabled = true
     }
     
-    @objc func resetButtons(_ sender: UITapGestureRecognizer? = nil) {
+    func unlockButtons() {
         trueAnswerButton.isUserInteractionEnabled = true
         falseAnswerButton.isUserInteractionEnabled = true
         
         aAnswerButton.isUserInteractionEnabled = true
         bAnswerButton.isUserInteractionEnabled = true
         cAnswerButton.isUserInteractionEnabled = true
+    }
+    
+    @objc func resetButtons(_ sender: UITapGestureRecognizer? = nil) {
+        unlockButtons()
         
         trueAnswerButton.backgroundColor = UIColor.white
         falseAnswerButton.backgroundColor = UIColor.white
@@ -160,7 +175,7 @@ class LearnViewController: UIViewController {
         
         tapGesture.isEnabled = false
     }
-
+    
     func showTrueFalseAnswerButtons() {
         trueFalseButtonsView.isHidden = false
         abcButtonsView.isHidden = true
@@ -172,41 +187,46 @@ class LearnViewController: UIViewController {
     }
     
     func displayRandomQuestion() {
-        guard let randomQuestion = questions.randomElement() else { return }
-        currentQuestion = randomQuestion
+        currentQuestionIndex = Int.random(in: 0 ..< questions.count)
+        let currentQuestion = questions[currentQuestionIndex]
         
-        if randomQuestion.image == "" {
+        levelOfMasteryImage.image = UIImage(named: String(currentQuestion.masteryLevel ?? 0))
+        
+        if currentQuestion.image == "" {
             self.questionImage.image = UIImage(named: "imagePlaceholder")
         }
         else {
-            self.questionImage.load(url: URL(string: randomQuestion.image))
+            self.questionImage.load(url: URL(string: currentQuestion.image))
         }
         
-        questionLabel.text = randomQuestion.question
+        questionLabel.text = currentQuestion.question
         
-        if randomQuestion.isAbcQuestion {
+        if currentQuestion.isAbcQuestion {
             showAbcAnswerButtons()
-            aAnswerButton.setTitle(randomQuestion.answerA, for: .normal)
-            bAnswerButton.setTitle(randomQuestion.answerB, for: .normal)
-            cAnswerButton.setTitle(randomQuestion.answerC, for: .normal)
+            aAnswerButton.setTitle(currentQuestion.answerA, for: .normal)
+            bAnswerButton.setTitle(currentQuestion.answerB, for: .normal)
+            cAnswerButton.setTitle(currentQuestion.answerC, for: .normal)
         }
         else {
             showTrueFalseAnswerButtons()
         }
     }
     
-    func fetchQuestions(completion: @escaping () -> Void) {
-        fetchMasteredQuestionsIDs {
-            var query: Query
+    func fetchQuestions(limitTo limit: Int, completion: (() -> Void)?) {
+        fetchMasteredQuestionsIDs { masteredQuestionsIDs in
+            var questionsToFetchIDs = [Int]()
             
-            if self.masteredQuestionsIDs.isEmpty {
-                query = K.Collections.questions.order(by: "id", descending: false).limit(to: 15)
-            }
-            else {
-                query = K.Collections.questions.whereField("id", notIn: self.masteredQuestionsIDs).order(by: "id", descending: false).limit(to: 15)
+            for index in (self.lastFetchedQuestionIndex + 1) ... K.numberOfQuestions {
+                if !masteredQuestionsIDs.contains(index) {
+                    questionsToFetchIDs.append(index)
+                    self.lastFetchedQuestionIndex = index
+                    if questionsToFetchIDs.count == limit {
+                        break
+                    }
+                }
             }
             
-            query.getDocuments { snapshot, error in
+            K.Collections.questions.whereField("id", in: questionsToFetchIDs).getDocuments { snapshot, error in
                 if let error = error {
                     print("DEBUG: Error fetching questions: \(error.localizedDescription)")
                     return
@@ -225,16 +245,18 @@ class LearnViewController: UIViewController {
                         }
                     }
                 }
-                completion()
+                self.checkMasteryLevels(forLast: limit, completion: completion)
             }
         }
     }
     
-    func fetchMasteredQuestionsIDs(completion: @escaping () -> Void) {
+    func fetchMasteredQuestionsIDs(completion: @escaping ([Int]) -> Void) {
         guard let currentUserID = Auth.auth().currentUser?.uid else {
             print("DEBUG: Error getting current user id.")
             return
         }
+        
+        var masteredQuestionsIDs = [Int]()
         
         K.Collections.users.document(currentUserID).collection("answeredQuestions").whereField("masteryLevel", isGreaterThanOrEqualTo: 5).getDocuments { snapshot, error in
             if let error = error {
@@ -245,8 +267,8 @@ class LearnViewController: UIViewController {
             if let documents = snapshot?.documents {
                 for document in documents {
                     do {
-                        if let masteredQuestionID = try document.data(as: AnsweredQuestion.self) {
-                            self.masteredQuestionsIDs.append(masteredQuestionID.id)
+                        if let masteredQuestion = try document.data(as: AnsweredQuestion.self) {
+                            masteredQuestionsIDs.append(masteredQuestion.id)
                         }
                     }
                     catch let error {
@@ -255,13 +277,139 @@ class LearnViewController: UIViewController {
                     }
                 }
             }
-            completion()
+            completion(masteredQuestionsIDs)
         }
     }
     
-    func animate(button: UIButton, to color: UIColor?) {
-        UIView.animate(withDuration: 0.5) {
+    func checkMasteryLevels(forLast questionsNumber: Int, completion: (() -> Void)?) {
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
+            print("DEBUG: Error getting current user id.")
+            return
+        }
+        
+        for index in (questions.count - questionsNumber) ..< questions.count {
+            K.Collections.users.document(currentUserID).collection("answeredQuestions").document(String(questions[index].id)).getDocument { snapshot, error in
+                if let error = error {
+                    print("DEBUG: Error fetching answered question: \(error.localizedDescription)")
+                    return
+                }
+                if let document = snapshot {
+                    do {
+                        if let answeredQuestion = try document.data(as: AnsweredQuestion.self) {
+                            self.questions[index].masteryLevel = answeredQuestion.masteryLevel
+                        }
+                    }
+                    catch let error {
+                        print("DEBUG: Error converting document to AnsweredQuestion type: \(error.localizedDescription)")
+                        return
+                    }
+                }
+                completion?()
+            }
+        }
+    }
+    
+    func animate(button: UIButton, to color: UIColor?, delay: Double = 0) {
+        UIView.animate(withDuration: 0.5, delay: delay) {
             button.backgroundColor = color
+        }
+    }
+    
+    func changeMasteryLevel(forQuestionID questionID: Int, by value: Int, completion: (() -> Void)? = nil) {
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
+            print("DEBUG: Error getting current user id.")
+            return
+        }
+        
+        K.Collections.users.document(currentUserID).collection("answeredQuestions").document(String(questionID)).getDocument { snapshot, error in
+            if let error = error {
+                print("DEBUG: Error fetching answered question: \(error.localizedDescription)")
+                return
+            }
+            if snapshot?.exists == true {
+                K.Collections.users.document(currentUserID).collection("answeredQuestions").document(String(questionID)).getDocument { snapshot, error in
+                    do {
+                        if let answeredQuestion = try snapshot?.data(as: AnsweredQuestion.self) {
+                            if (value < 0) && (answeredQuestion.masteryLevel == 0) {
+                                return
+                            }
+                            else {
+                                K.Collections.users.document(currentUserID).collection("answeredQuestions").document(String(questionID)).updateData(["masteryLevel" : FieldValue.increment(Int64(value))]) { error in
+                                    if let error = error {
+                                        print("DEBUG: Error changing mastery level value: \(error.localizedDescription)")
+                                        return
+                                    }
+                                    completion?()
+                                }
+                            }
+                        }
+                    }
+                    catch let error {
+                        print("DEBUG: Error converting document to AnsweredQuestion type: \(error.localizedDescription)")
+                        return
+                    }
+                }
+            }
+            else {
+                let answeredQuestion = AnsweredQuestion(id: questionID, masteryLevel: (value > 0) ? value : 0)
+                do {
+                    try K.Collections.users.document(currentUserID).collection("answeredQuestions").document(String(questionID)).setData(from: answeredQuestion)
+                    completion?()
+                }
+                catch let error {
+                    print("DEBUG: Error uploading answered question data: \(error.localizedDescription)")
+                    return
+                }
+            }
+        }
+    }
+    
+    func increaseLevelOfMastery() {
+        questions[currentQuestionIndex].masteryLevel = (questions[currentQuestionIndex].masteryLevel ?? 0) + 1
+        changeMasteryLevel(forQuestionID: questions[currentQuestionIndex].id, by: 1) {
+            if self.questions[self.currentQuestionIndex].masteryLevel == 5 {
+                self.questions.remove(at: self.currentQuestionIndex)
+                self.fetchQuestions(limitTo: 1, completion: nil)
+                self.incrementUserMasteredQuestionsNumber()
+            }
+            self.tapGesture.isEnabled = true
+        }
+        
+        animateLevelOfMasteryImage()
+    }
+    
+    func decreaseLevelOfMastery() {
+        if questions[currentQuestionIndex].masteryLevel != 0 && questions[currentQuestionIndex].masteryLevel != nil {
+            questions[currentQuestionIndex].masteryLevel = (questions[currentQuestionIndex].masteryLevel ?? 0) - 1
+            changeMasteryLevel(forQuestionID: questions[currentQuestionIndex].id, by: -1) {
+                self.tapGesture.isEnabled = true
+            }
+            animateLevelOfMasteryImage()
+        }
+        else {
+            tapGesture.isEnabled = true
+        }
+    }
+    
+    func animateLevelOfMasteryImage() {
+        UIView.transition(with: levelOfMasteryImage, duration: 0.5, options: .transitionCrossDissolve) {
+            if let masteryLevel = self.questions[self.currentQuestionIndex].masteryLevel {
+                self.levelOfMasteryImage.image = UIImage(named: String(masteryLevel))
+            }
+        }
+    }
+    
+    func incrementUserMasteredQuestionsNumber() {
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
+            print("DEBUG: Error getting current user id.")
+            return
+        }
+        
+        K.Collections.users.document(currentUserID).updateData(["masteredQuestionsNumber" : FieldValue.increment(Int64(1))]) { error in
+            if let error = error {
+                print("DEBUG: Error updating user mastered questions number: \(error.localizedDescription)")
+                return
+            }
         }
     }
     

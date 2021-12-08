@@ -13,4 +13,7 @@ struct K {
         static let users = Firestore.firestore().collection("users")
         static let questions = Firestore.firestore().collection("questions")
     }
+    
+    static let numberOfQuestions = 2276
+    static let numberOfSigns = 70
 }

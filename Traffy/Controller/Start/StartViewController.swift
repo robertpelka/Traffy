@@ -57,20 +57,17 @@ class StartViewController: UIViewController {
             }
             
             if let user = user {
-                let numberOfQuestions = 342
-                let numberOfSigns = 70
-                
                 self.profileImage.load(url: URL(string: user.profileImageURL))
                 
                 self.usernameLabel.text = "Witaj, \(user.username)!"
                 
-                self.questionsCounterLabel.text = String(user.masteredQuestionsNumber) + " / " +  String(numberOfQuestions)
-                self.signsCounterLabel.text = String(user.discoveredSignsNumber) + " / " +  String(numberOfSigns)
+                self.questionsCounterLabel.text = String(user.masteredQuestionsNumber) + " / " +  String(K.numberOfQuestions)
+                self.signsCounterLabel.text = String(user.discoveredSignsNumber) + " / " +  String(K.numberOfSigns)
                 
-                let questionsProgress = Float(user.masteredQuestionsNumber) / Float(numberOfQuestions)
+                let questionsProgress = Float(user.masteredQuestionsNumber) / Float(K.numberOfQuestions)
                 self.questionsProgressView.setProgress(questionsProgress, animated: true)
                 
-                let signsProgress = Float(user.discoveredSignsNumber) / Float(numberOfSigns)
+                let signsProgress = Float(user.discoveredSignsNumber) / Float(K.numberOfSigns)
                 self.signsProgressView.setProgress(signsProgress, animated: true)
             }
             
