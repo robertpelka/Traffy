@@ -34,7 +34,7 @@ class LearnViewController: UIViewController {
         super.viewDidLoad()
         
         prepareView()
-        fetchQuestions(limitTo: 2) {
+        fetchQuestions(limitTo: 10) {
             self.displayRandomQuestion()
             self.unlockButtons()
         }
@@ -245,7 +245,7 @@ class LearnViewController: UIViewController {
                         }
                     }
                 }
-                self.checkMasteryLevels(forLast: limit, completion: completion)
+                self.checkMasteryLevels(forQuestionIDs: questionsToFetchIDs, completion: completion)
             }
         }
     }
@@ -281,22 +281,24 @@ class LearnViewController: UIViewController {
         }
     }
     
-    func checkMasteryLevels(forLast questionsNumber: Int, completion: (() -> Void)?) {
+    func checkMasteryLevels(forQuestionIDs questionIDs: [Int], completion: (() -> Void)?) {
         guard let currentUserID = Auth.auth().currentUser?.uid else {
             print("DEBUG: Error getting current user id.")
             return
         }
         
-        for index in (questions.count - questionsNumber) ..< questions.count {
-            K.Collections.users.document(currentUserID).collection("answeredQuestions").document(String(questions[index].id)).getDocument { snapshot, error in
-                if let error = error {
-                    print("DEBUG: Error fetching answered question: \(error.localizedDescription)")
-                    return
-                }
-                if let document = snapshot {
+        K.Collections.users.document(currentUserID).collection("answeredQuestions").whereField("id", in: questionIDs).getDocuments { snapshot, error in
+            if let error = error {
+                print("DEBUG: Error fetching answered question: \(error.localizedDescription)")
+                return
+            }
+            if let documents = snapshot?.documents {
+                for document in documents {
                     do {
                         if let answeredQuestion = try document.data(as: AnsweredQuestion.self) {
-                            self.questions[index].masteryLevel = answeredQuestion.masteryLevel
+                            if let index = self.questions.firstIndex(where: {$0.id == answeredQuestion.id}) {
+                                self.questions[index].masteryLevel = answeredQuestion.masteryLevel
+                            }
                         }
                     }
                     catch let error {
@@ -304,8 +306,8 @@ class LearnViewController: UIViewController {
                         return
                     }
                 }
-                completion?()
             }
+            completion?()
         }
     }
     
