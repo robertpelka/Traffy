@@ -14,6 +14,15 @@ struct K {
         static let questions = Firestore.firestore().collection("questions")
     }
     
+    struct Identifiers {
+        static let userCell = "userCell"
+    }
+    
+    struct Colors {
+        static let red = "redColor"
+        static let green = "greenColor"
+    }
+    
     static let numberOfQuestions = 2276
     static let numberOfSigns = 70
 }

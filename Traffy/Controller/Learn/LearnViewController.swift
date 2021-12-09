@@ -64,11 +64,11 @@ class LearnViewController: UIViewController {
     @IBAction func trueAnswerButtonPressed(_ sender: UIButton) {
         lockButtons()
         if questions[currentQuestionIndex].correctAnswer == "T" {
-            animate(button: sender, to: UIColor(named: "green"))
+            animate(button: sender, to: UIColor(named: K.Colors.green))
             increaseLevelOfMastery()
         }
         else {
-            animate(button: sender, to: UIColor(named: "red"))
+            animate(button: sender, to: UIColor(named: K.Colors.red))
             showGoodAnwer()
             decreaseLevelOfMastery()
         }
@@ -77,11 +77,11 @@ class LearnViewController: UIViewController {
     @IBAction func falseAnswerButtonPressed(_ sender: UIButton) {
         lockButtons()
         if questions[currentQuestionIndex].correctAnswer == "N" {
-            animate(button: sender, to: UIColor(named: "green"))
+            animate(button: sender, to: UIColor(named: K.Colors.green))
             increaseLevelOfMastery()
         }
         else {
-            animate(button: sender, to: UIColor(named: "red"))
+            animate(button: sender, to: UIColor(named: K.Colors.red))
             showGoodAnwer()
             decreaseLevelOfMastery()
         }
@@ -90,11 +90,11 @@ class LearnViewController: UIViewController {
     @IBAction func aAnswerButtonPressed(_ sender: UIButton) {
         lockButtons()
         if questions[currentQuestionIndex].correctAnswer == "A" {
-            animate(button: sender, to: UIColor(named: "green"))
+            animate(button: sender, to: UIColor(named: K.Colors.green))
             increaseLevelOfMastery()
         }
         else {
-            animate(button: sender, to: UIColor(named: "red"))
+            animate(button: sender, to: UIColor(named: K.Colors.red))
             showGoodAnwer()
             decreaseLevelOfMastery()
         }
@@ -103,11 +103,11 @@ class LearnViewController: UIViewController {
     @IBAction func bAnswerButtonPressed(_ sender: UIButton) {
         lockButtons()
         if questions[currentQuestionIndex].correctAnswer == "B" {
-            animate(button: sender, to: UIColor(named: "green"))
+            animate(button: sender, to: UIColor(named: K.Colors.green))
             increaseLevelOfMastery()
         }
         else {
-            animate(button: sender, to: UIColor(named: "red"))
+            animate(button: sender, to: UIColor(named: K.Colors.red))
             showGoodAnwer()
             decreaseLevelOfMastery()
         }
@@ -116,11 +116,11 @@ class LearnViewController: UIViewController {
     @IBAction func cAnswerButtonPressed(_ sender: UIButton) {
         lockButtons()
         if questions[currentQuestionIndex].correctAnswer == "C" {
-            animate(button: sender, to: UIColor(named: "green"))
+            animate(button: sender, to: UIColor(named: K.Colors.green))
             increaseLevelOfMastery()
         }
         else {
-            animate(button: sender, to: UIColor(named: "red"))
+            animate(button: sender, to: UIColor(named: K.Colors.red))
             showGoodAnwer()
             decreaseLevelOfMastery()
         }
@@ -129,15 +129,15 @@ class LearnViewController: UIViewController {
     func showGoodAnwer() {
         switch self.questions[currentQuestionIndex].correctAnswer {
         case "T":
-            self.animate(button: trueAnswerButton, to: UIColor(named: "green"), delay: 0.5)
+            self.animate(button: trueAnswerButton, to: UIColor(named: K.Colors.green), delay: 0.5)
         case "N":
-            self.animate(button: falseAnswerButton, to: UIColor(named: "green"), delay: 0.5)
+            self.animate(button: falseAnswerButton, to: UIColor(named: K.Colors.green), delay: 0.5)
         case "A":
-            self.animate(button: aAnswerButton, to: UIColor(named: "green"), delay: 0.5)
+            self.animate(button: aAnswerButton, to: UIColor(named: K.Colors.green), delay: 0.5)
         case "B":
-            self.animate(button: bAnswerButton, to: UIColor(named: "green"), delay: 0.5)
+            self.animate(button: bAnswerButton, to: UIColor(named: K.Colors.green), delay: 0.5)
         case "C":
-            self.animate(button: cAnswerButton, to: UIColor(named: "green"), delay: 0.5)
+            self.animate(button: cAnswerButton, to: UIColor(named: K.Colors.green), delay: 0.5)
         default:
             break
         }
