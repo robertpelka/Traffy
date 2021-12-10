@@ -16,6 +16,8 @@ class ResetPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailTextfield.delegate = self
 
         prepareView()
     }
@@ -52,4 +54,13 @@ class ResetPasswordViewController: UIViewController {
     }
     
 
+}
+
+//MARK: - UITextFieldDelegate
+
+extension ResetPasswordViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
 }

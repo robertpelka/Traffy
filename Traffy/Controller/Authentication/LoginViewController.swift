@@ -21,6 +21,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailTextfield.delegate = self
+        passwordTextfield.delegate = self
+        
         prepareView()
     }
     
@@ -63,4 +66,13 @@ class LoginViewController: UIViewController {
         }
     }
     
+}
+
+//MARK: - UITextFieldDelegate
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
 }

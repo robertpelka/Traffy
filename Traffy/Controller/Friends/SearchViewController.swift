@@ -20,6 +20,8 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         userTableView.dataSource = self
+        searchTextfield.delegate = self
+        
         prepareView()
         searchUsers()
     }
@@ -51,7 +53,8 @@ class SearchViewController: UIViewController {
                     do {
                         if let user = try document.data(as: User.self) {
                             if user.id != currentUserID {
-                                self.users.append(user)                                
+                                self.users.append(user)
+                                
                             }
                         }
                     }
@@ -65,6 +68,8 @@ class SearchViewController: UIViewController {
     }
     
 }
+
+//MARK: - UITableViewDataSource
 
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,4 +87,13 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     
+}
+
+//MARK: - UITextFieldDelegate
+
+extension SearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
 }

@@ -30,6 +30,10 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailTextfield.delegate = self
+        passwordTextfield.delegate = self
+        usernameTextfield.delegate = self
+        
         prepareView()
     }
     
@@ -133,4 +137,13 @@ extension RegisterViewController: PHPickerViewControllerDelegate {
         picker.dismiss(animated: true, completion: nil)
     }
     
+}
+
+//MARK: - UITextFieldDelegate
+
+extension RegisterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
 }
