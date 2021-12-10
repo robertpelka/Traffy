@@ -453,7 +453,14 @@
                             <constraint firstItem="ulg-hc-WkF" firstAttribute="centerX" secondItem="Rlg-NP-DgN" secondAttribute="centerX" id="l4d-fi-pnP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="x8o-0R-Lhe"/>
+                    <navigationItem key="navigationItem" id="x8o-0R-Lhe">
+                        <barButtonItem key="rightBarButtonItem" title="Wyloguj" id="Lc2-sU-J55">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="CAL-Vd-4Ot" id="M3v-wv-LJI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQb-FT-RfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -584,6 +591,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dVh-yJ-uac"/>
                     <connections>
+                        <outlet property="searchTextfield" destination="JUJ-rx-8bA" id="RVF-nn-2aa"/>
                         <outlet property="searchTextfieldView" destination="o1G-N7-2RY" id="mMR-Ga-c6p"/>
                         <outlet property="userTableView" destination="L3u-wl-MIG" id="h6r-RY-Psk"/>
                     </connections>
