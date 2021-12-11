@@ -85,8 +85,6 @@ extension SearchViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
 
 //MARK: - UITextFieldDelegate

@@ -9,11 +9,16 @@ import UIKit
 import Firebase
 
 class FriendsViewController: UIViewController {
-
+    
+    @IBOutlet weak var friendTableView: UITableView!
+    @IBOutlet weak var addFriendsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        friendTableView.dataSource = self
+        friendTableView.contentInset.bottom = 94
+        addFriendsButton.layer.cornerRadius = 15
     }
     
     @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
@@ -31,4 +36,17 @@ class FriendsViewController: UIViewController {
         }
     }
     
+}
+
+//MARK: - UITableViewDataSource
+
+extension FriendsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = friendTableView.dequeueReusableCell(withIdentifier: K.Identifiers.friendCell) as! FriendTableViewCell
+        return cell
+    }
 }
