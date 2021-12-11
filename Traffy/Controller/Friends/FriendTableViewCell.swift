@@ -12,6 +12,10 @@ class FriendTableViewCell: UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var questionsCounterLabel: UILabel!
+    @IBOutlet weak var signsCounterLabel: UILabel!
+    @IBOutlet weak var questionsProgressView: CustomProgressView!
+    @IBOutlet weak var signsProgressView: CustomProgressView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

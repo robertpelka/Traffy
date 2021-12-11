@@ -594,6 +594,10 @@
                                         <connections>
                                             <outlet property="cellView" destination="jNo-cs-m2r" id="der-gC-hPw"/>
                                             <outlet property="profileImage" destination="LUg-Zs-aiD" id="ZlL-Ec-Qrg"/>
+                                            <outlet property="questionsCounterLabel" destination="Vf3-k4-enx" id="i2m-ko-NlJ"/>
+                                            <outlet property="questionsProgressView" destination="YBH-Xp-LVq" id="wVr-8S-QBG"/>
+                                            <outlet property="signsCounterLabel" destination="ED7-XV-asY" id="ku8-0l-Ncn"/>
+                                            <outlet property="signsProgressView" destination="Hfd-1U-fre" id="t8N-eS-w5T"/>
                                             <outlet property="usernameLabel" destination="cwd-R4-BLY" id="1os-a6-Qti"/>
                                         </connections>
                                     </tableViewCell>

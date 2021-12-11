@@ -78,6 +78,7 @@ extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let user = users[indexPath.row]
+        
         let cell = userTableView.dequeueReusableCell(withIdentifier: K.Identifiers.userCell) as! UserTableViewCell
         cell.userID = user.id
         cell.profileImage.load(url: URL(string: user.profileImageURL))
