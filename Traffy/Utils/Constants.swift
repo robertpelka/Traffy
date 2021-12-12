@@ -17,6 +17,7 @@ struct K {
     struct Identifiers {
         static let userCell = "userCell"
         static let friendCell = "friendCell"
+        static let signCell = "signCell"
     }
     
     struct Colors {

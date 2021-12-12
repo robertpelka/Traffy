@@ -7,6 +7,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -216,7 +217,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Igj-wS-3GG" customClass="LearnViewController" customModule="Traffy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vDz-6x-SOK">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pJC-FV-zgU">
@@ -439,7 +440,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="CAL-Vd-4Ot" customClass="FriendsViewController" customModule="Traffy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rlg-NP-DgN">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="wmC-GK-NGZ">
@@ -675,7 +676,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="6Wm-7O-q5a" customClass="SearchViewController" customModule="Traffy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I3e-qq-5Ni">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1G-N7-2RY">
@@ -813,6 +814,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="STK-zg-QbK">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="backgroundColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="bC6-hG-KRO" kind="relationship" relationship="rootViewController" id="X02-Nt-dEK"/>
@@ -827,7 +833,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="bC6-hG-KRO" customClass="CategoriesViewController" customModule="Traffy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NKL-qg-xCn">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="PgB-sh-lN4">
@@ -855,6 +861,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                                                     <directionalEdgeInsets key="contentInsets" top="0.0" leading="16" bottom="0.0" trailing="0.0"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="l1I-sZ-klg" kind="show" id="qI3-Ov-W78"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-/-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-g0-gfB">
                                                 <rect key="frame" x="16" y="18" width="308" height="21.666666666666671"/>
@@ -1030,12 +1039,86 @@
             </objects>
             <point key="canvasLocation" x="3261.5384615384614" y="372.51184834123222"/>
         </scene>
+        <!--Znaki-->
+        <scene sceneID="6Sj-hb-lqr">
+            <objects>
+                <viewController id="l1I-sZ-klg" customClass="SignsViewController" customModule="Traffy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iPE-qC-NqS">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RiD-R3-pSH">
+                                <rect key="frame" x="25" y="88" width="340" height="673"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="25" minimumInteritemSpacing="25" id="WHR-Uz-KWL">
+                                    <size key="itemSize" width="155" height="155"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="signCell" id="DYh-rk-IWF">
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Cf8-18-yjB">
+                                            <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mXW-E3-z71">
+                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ostrzegawcze" translatesAutoresizingMaskIntoConstraints="NO" id="QkD-im-VUx">
+                                                            <rect key="frame" x="0.0" y="0.0" width="155" height="126.66666666666667"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Znak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8U-YC-usN">
+                                                            <rect key="frame" x="0.0" y="134.66666666666666" width="155" height="20.333333333333343"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20.333333333333343" id="mpd-e2-G0S"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="mXW-E3-z71" secondAttribute="bottom" id="WIS-jA-gpA"/>
+                                                <constraint firstItem="mXW-E3-z71" firstAttribute="leading" secondItem="Cf8-18-yjB" secondAttribute="leading" id="aVn-6c-xEi"/>
+                                                <constraint firstAttribute="trailing" secondItem="mXW-E3-z71" secondAttribute="trailing" id="gFj-1l-XfR"/>
+                                                <constraint firstItem="mXW-E3-z71" firstAttribute="top" secondItem="Cf8-18-yjB" secondAttribute="top" id="n4M-z1-f3n"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="155" height="155"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZQK-rL-47G"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZQK-rL-47G" firstAttribute="trailing" secondItem="RiD-R3-pSH" secondAttribute="trailing" constant="25" id="94x-F6-w8j"/>
+                            <constraint firstItem="RiD-R3-pSH" firstAttribute="bottom" secondItem="ZQK-rL-47G" secondAttribute="bottom" id="A9f-YK-tH8"/>
+                            <constraint firstItem="RiD-R3-pSH" firstAttribute="leading" secondItem="ZQK-rL-47G" secondAttribute="leading" constant="25" id="cTi-jU-1v8"/>
+                            <constraint firstItem="RiD-R3-pSH" firstAttribute="top" secondItem="ZQK-rL-47G" secondAttribute="top" id="sfb-vY-1i4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Znaki" id="CbA-FT-cX3"/>
+                    <connections>
+                        <outlet property="signsCollectionView" destination="RiD-R3-pSH" id="Cvs-fr-otA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ia7-YT-FvF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4070.7692307692305" y="372.51184834123222"/>
+        </scene>
         <!--Start-->
         <scene sceneID="6Ya-9G-nqC">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="NzV-MO-uZn" customClass="StartViewController" customModule="Traffy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vMY-qF-Gg3">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zMk-zl-vDI">
@@ -1241,11 +1324,11 @@
             <objects>
                 <tabBarController storyboardIdentifier="TabBarView" modalPresentationStyle="fullScreen" id="1Gw-l2-tsW" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="r3o-qc-nDr"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hai-Xe-zhV">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Hai-Xe-zhV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="tabBarColor"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="tabBarColor"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
