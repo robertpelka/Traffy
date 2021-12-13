@@ -899,6 +899,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                                                     <directionalEdgeInsets key="contentInsets" top="0.0" leading="16" bottom="0.0" trailing="0.0"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="3m4-cA-B82" kind="show" id="ETk-3j-aTc"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-/-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgV-nP-OhK">
                                                 <rect key="frame" x="16" y="18" width="308" height="21.666666666666671"/>
@@ -1112,6 +1115,129 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ia7-YT-FvF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4070.7692307692305" y="372.51184834123222"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lif-sl-B2y">
+            <objects>
+                <viewController id="3m4-cA-B82" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uVe-qX-0j5">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dc-BK-Npw">
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="VRO-Qe-oq4">
+                                        <rect key="frame" x="0.0" y="15" width="390" height="1565"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BEt-jL-N7h">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="205"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ostrzegawcze" translatesAutoresizingMaskIntoConstraints="NO" id="ESl-FX-gkM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="390" height="150"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="150" id="p1i-U3-1Hd"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A-1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hh5-4W-KcX">
+                                                        <rect key="frame" x="0.0" y="165" width="390" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="jGs-7M-DCK"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Hh5-4W-KcX" secondAttribute="trailing" id="51e-jX-Je2"/>
+                                                    <constraint firstItem="Hh5-4W-KcX" firstAttribute="leading" secondItem="BEt-jL-N7h" secondAttribute="leading" id="FEN-qq-bVc"/>
+                                                    <constraint firstItem="ESl-FX-gkM" firstAttribute="leading" secondItem="BEt-jL-N7h" secondAttribute="leading" id="OnT-15-Jnq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ESl-FX-gkM" secondAttribute="trailing" id="Yge-mK-09m"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuz-Fq-R9p">
+                                                <rect key="frame" x="0.0" y="230" width="390" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="„niebezpieczny zakręt w prawo”" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdM-T4-SHF">
+                                                        <rect key="frame" x="25" y="0.0" width="340" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="HdM-T4-SHF" firstAttribute="leading" secondItem="cuz-Fq-R9p" secondAttribute="leading" constant="25" id="4CJ-UK-N4i"/>
+                                                    <constraint firstAttribute="bottom" secondItem="HdM-T4-SHF" secondAttribute="bottom" id="INB-6B-hZ4"/>
+                                                    <constraint firstItem="HdM-T4-SHF" firstAttribute="top" secondItem="cuz-Fq-R9p" secondAttribute="top" id="Vdv-nl-jDD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="HdM-T4-SHF" secondAttribute="trailing" constant="25" id="p5q-h6-CoO"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jUy-kB-mJD">
+                                                <rect key="frame" x="0.0" y="305" width="390" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jeszcze nie odkryłeś tego znaku" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41v-B7-Biu">
+                                                        <rect key="frame" x="66.333333333333343" y="14.333333333333316" width="257.66666666666663" height="21.666666666666671"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                        <color key="textColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="backgroundSecondaryColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="41v-B7-Biu" firstAttribute="centerY" secondItem="jUy-kB-mJD" secondAttribute="centerY" id="MCQ-Ck-Eak"/>
+                                                    <constraint firstAttribute="height" constant="50" id="NgJ-q8-lz5"/>
+                                                    <constraint firstItem="41v-B7-Biu" firstAttribute="centerX" secondItem="jUy-kB-mJD" secondAttribute="centerX" id="g6k-cb-VfR"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GS2-s9-isd">
+                                                <rect key="frame" x="0.0" y="380" width="390" height="1185"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sm-bT-J51">
+                                                        <rect key="frame" x="25" y="0.0" width="340" height="1160"/>
+                                                        <string key="text">Znak ostrzega przed pojedynczym niebezpiecznym zakrętem w prawo. Stosuje się go na ogół poza miastami, gdy kąt zwrotu łuku drogi jest większy niż 5°, a jego promień jest mniejszy niż 750 m oraz w zależności od przechyłki. Ustawiany także na zakrętach o ograniczonej widoczności, bądź gdzie dochodzi do częstych wypadków lub kolizji. 	Znak ostrzega przed pojedynczym niebezpiecznym zakrętem w prawo. Stosuje się go na ogół poza miastami, gdy kąt zwrotu łuku drogi jest większy niż 5°, a jego promień jest mniejszy niż 750 m oraz w zależności od przechyłki. Ustawiany także na zakrętach o ograniczonej widoczności, bądź gdzie dochodzi do częstych wypadków lub kolizji. Znak ostrzega przed pojedynczym niebezpiecznym zakrętem w prawo. Stosuje się go na ogół poza miastami, gdy kąt zwrotu łuku drogi jest większy niż 5°, a jego promień jest mniejszy niż 750 m oraz w zależności od przechyłki. Ustawiany także na zakrętach o ograniczonej widoczności, bądź gdzie dochodzi do częstych wypadków lub kolizji. 	Znak ostrzega przed pojedynczym niebezpiecznym zakrętem w prawo. Stosuje się go na ogół poza miastami, gdy kąt zwrotu łuku drogi jest większy niż 5°, a jego promień jest mniejszy niż 750 m oraz w zależności od przechyłki. Ustawiany także na zakrętach o ograniczonej widoczności, bądź gdzie dochodzi do częstych wypadków lub kolizji. Znak ostrzega przed pojedynczym niebezpiecznym zakrętem w prawo. Stosuje się go na ogół poza miastami, gdy kąt zwrotu łuku drogi jest większy niż 5°, a jego promień jest mniejszy niż 750 m oraz w zależności od przechyłki. Ustawiany także na zakrętach o ograniczonej widoczności, bądź gdzie dochodzi do częstych wypadków lub kolizji. 	Znak ostrzega przed pojedynczym niebezpiecznym zakrętem w prawo. Stosuje się go na ogół poza miastami, gdy kąt zwrotu łuku drogi jest większy niż 5°, a jego promień jest mniejszy niż 750 m oraz w zależności od przechyłki. Ustawiany także na zakrętach o ograniczonej widoczności, bądź gdzie dochodzi do częstych wypadków lub kolizji.</string>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="9sm-bT-J51" secondAttribute="trailing" constant="25" id="CEs-pZ-M8i"/>
+                                                    <constraint firstItem="9sm-bT-J51" firstAttribute="top" secondItem="GS2-s9-isd" secondAttribute="top" id="Kfo-DH-oru"/>
+                                                    <constraint firstAttribute="bottom" secondItem="9sm-bT-J51" secondAttribute="bottom" constant="25" id="MDV-SQ-Ayt"/>
+                                                    <constraint firstItem="9sm-bT-J51" firstAttribute="leading" secondItem="GS2-s9-isd" secondAttribute="leading" constant="25" id="oWz-Ki-8PA"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VRO-Qe-oq4" firstAttribute="top" secondItem="Q4f-Dh-RNa" secondAttribute="top" constant="15" id="8LX-64-Qis"/>
+                                    <constraint firstItem="VRO-Qe-oq4" firstAttribute="width" secondItem="jpm-xu-RSU" secondAttribute="width" id="8lk-hO-vGE"/>
+                                    <constraint firstItem="VRO-Qe-oq4" firstAttribute="leading" secondItem="Q4f-Dh-RNa" secondAttribute="leading" id="Kmz-aw-wp0"/>
+                                    <constraint firstItem="VRO-Qe-oq4" firstAttribute="trailing" secondItem="Q4f-Dh-RNa" secondAttribute="trailing" id="P9Q-VW-NbK"/>
+                                    <constraint firstItem="VRO-Qe-oq4" firstAttribute="bottom" secondItem="Q4f-Dh-RNa" secondAttribute="bottom" id="xdL-p4-MVz"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Q4f-Dh-RNa"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="jpm-xu-RSU"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Axw-Na-j38"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Dc-BK-Npw" firstAttribute="leading" secondItem="Axw-Na-j38" secondAttribute="leading" id="0Qd-BA-9ev"/>
+                            <constraint firstItem="8Dc-BK-Npw" firstAttribute="trailing" secondItem="Axw-Na-j38" secondAttribute="trailing" id="H7y-Y6-XZh"/>
+                            <constraint firstItem="8Dc-BK-Npw" firstAttribute="bottom" secondItem="Axw-Na-j38" secondAttribute="bottom" id="Hs2-2a-Mn2"/>
+                            <constraint firstItem="8Dc-BK-Npw" firstAttribute="top" secondItem="Axw-Na-j38" secondAttribute="top" id="Ozy-oo-XWA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eGL-ij-xo6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjT-q2-Q6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4865" y="373"/>
         </scene>
         <!--Start-->
         <scene sceneID="6Ya-9G-nqC">
@@ -1779,7 +1905,7 @@
             <color red="0.086000002920627594" green="0.059000000357627869" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="backgroundSecondaryColor">
-            <color red="0.13725490196078433" green="0.11372549019607843" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.13699999451637268" green="0.11400000005960464" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="progressPrimaryColor">
             <color red="0.37299999594688416" green="0.2669999897480011" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
