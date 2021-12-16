@@ -6,6 +6,14 @@
 //
 
 import UIKit
+import Firebase
+
+enum SignType: String {
+    case warning = "ostrzegawczy"
+    case prohibition = "zakazu"
+    case mandatory = "nakazu"
+    case information = "informacyjny"
+}
 
 class CategoriesViewController: UIViewController {
 
@@ -21,6 +29,8 @@ class CategoriesViewController: UIViewController {
     
     @IBOutlet weak var discoverSignButton: UIButton!
     
+    var category: SignType = .warning
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,8 +45,35 @@ class CategoriesViewController: UIViewController {
         
         discoverSignButton.layer.cornerRadius = 15
     }
-
+    
+    @IBAction func warningSignsButtonPressed(_ sender: UIButton) {
+        category = .warning
+        performSegue(withIdentifier: K.Segues.goToSignsView, sender: self)
+    }
+    
+    @IBAction func prohibitionSignsButtonPressed(_ sender: UIButton) {
+        category = .prohibition
+        performSegue(withIdentifier: K.Segues.goToSignsView, sender: self)
+    }
+    
+    @IBAction func mandatorySignsButtonPressed(_ sender: UIButton) {
+        category = .mandatory
+        performSegue(withIdentifier: K.Segues.goToSignsView, sender: self)
+    }
+    
+    @IBAction func informationSignsButtonPressed(_ sender: UIButton) {
+        category = .information
+        performSegue(withIdentifier: K.Segues.goToSignsView, sender: self)
+    }
+    
     @IBAction func discoverSignButtonPressed(_ sender: UIButton) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Segues.goToSignsView {
+            let signsVC = segue.destination as! SignsViewController
+            signsVC.category = category
+        }
     }
     
 }

@@ -38,6 +38,7 @@
 		481D7D3D275BB7DF00284F6E /* AnsweredQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D3C275BB7DF00284F6E /* AnsweredQuestion.swift */; };
 		48CC1710276AA8D5004172ED /* SignsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 48CC170F276AA8D5004172ED /* SignsClassifier.mlmodel */; };
 		48CC1714276B9458004172ED /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC1713276B9458004172ED /* Sign.swift */; };
+		48CC1716276BBD02004172ED /* SignsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC1715276BBD02004172ED /* SignsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		481D7D3C275BB7DF00284F6E /* AnsweredQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsweredQuestion.swift; sourceTree = "<group>"; };
 		48CC170F276AA8D5004172ED /* SignsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SignsClassifier.mlmodel; sourceTree = "<group>"; };
 		48CC1713276B9458004172ED /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
+		48CC1715276BBD02004172ED /* SignsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			children = (
 				481D7D38275A825F00284F6E /* CategoriesViewController.swift */,
 				480AF2822765FF9300A4DB37 /* SignsViewController.swift */,
+				48CC1715276BBD02004172ED /* SignsCollectionViewCell.swift */,
 			);
 			path = Signs;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				481D7D242756031C00284F6E /* Extensions.swift in Sources */,
 				481D7D282758194000284F6E /* FriendsViewController.swift in Sources */,
 				481D7D22275602A900284F6E /* ImageUploader.swift in Sources */,
+				48CC1716276BBD02004172ED /* SignsCollectionViewCell.swift in Sources */,
 				48CC1710276AA8D5004172ED /* SignsClassifier.mlmodel in Sources */,
 				481D7CF42754129A00284F6E /* SceneDelegate.swift in Sources */,
 				481D7D0B2754C56200284F6E /* ResetPasswordViewController.swift in Sources */,

@@ -12,6 +12,7 @@ struct K {
     struct Collections {
         static let users = Firestore.firestore().collection("users")
         static let questions = Firestore.firestore().collection("questions")
+        static let signs = Firestore.firestore().collection("signs")
     }
     
     struct Identifiers {
@@ -23,6 +24,10 @@ struct K {
     struct Colors {
         static let red = "redColor"
         static let green = "greenColor"
+    }
+    
+    struct Segues {
+        static let goToSignsView = "goToSignsView"
     }
     
     static let numberOfQuestions = 2276
