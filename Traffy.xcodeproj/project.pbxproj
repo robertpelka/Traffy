@@ -37,6 +37,7 @@
 		481D7D3B275BB15F00284F6E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D3A275BB15300284F6E /* Question.swift */; };
 		481D7D3D275BB7DF00284F6E /* AnsweredQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D7D3C275BB7DF00284F6E /* AnsweredQuestion.swift */; };
 		48CC1710276AA8D5004172ED /* SignsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 48CC170F276AA8D5004172ED /* SignsClassifier.mlmodel */; };
+		48CC1714276B9458004172ED /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC1713276B9458004172ED /* Sign.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		481D7D3A275BB15300284F6E /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		481D7D3C275BB7DF00284F6E /* AnsweredQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsweredQuestion.swift; sourceTree = "<group>"; };
 		48CC170F276AA8D5004172ED /* SignsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SignsClassifier.mlmodel; sourceTree = "<group>"; };
+		48CC1713276B9458004172ED /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				481D7D1E27558F1500284F6E /* User.swift */,
 				481D7D3A275BB15300284F6E /* Question.swift */,
 				481D7D3C275BB7DF00284F6E /* AnsweredQuestion.swift */,
+				48CC1713276B9458004172ED /* Sign.swift */,
 				48CC170F276AA8D5004172ED /* SignsClassifier.mlmodel */,
 			);
 			path = Model;
@@ -301,6 +304,7 @@
 				481D7D0927541CAD00284F6E /* LoginViewController.swift in Sources */,
 				481D7D3D275BB7DF00284F6E /* AnsweredQuestion.swift in Sources */,
 				480AF2832765FFC100A4DB37 /* SignsViewController.swift in Sources */,
+				48CC1714276B9458004172ED /* Sign.swift in Sources */,
 				480AF27A2762688D00A4DB37 /* SearchViewController.swift in Sources */,
 				481D7D1D2755432700284F6E /* StartViewController.swift in Sources */,
 				481D7D2D27581C2700284F6E /* CustomProgressView.swift in Sources */,
