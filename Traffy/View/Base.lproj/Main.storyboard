@@ -1121,22 +1121,23 @@
                     <navigationItem key="navigationItem" title="Znaki" id="CbA-FT-cX3"/>
                     <connections>
                         <outlet property="signsCollectionView" destination="RiD-R3-pSH" id="Cvs-fr-otA"/>
+                        <segue destination="3m4-cA-B82" kind="show" identifier="goToSingleSignView" id="oD8-gG-6Zm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ia7-YT-FvF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4070.7692307692305" y="372.51184834123222"/>
         </scene>
-        <!--View Controller-->
+        <!--Single Sign View Controller-->
         <scene sceneID="lif-sl-B2y">
             <objects>
-                <viewController id="3m4-cA-B82" sceneMemberID="viewController">
+                <viewController id="3m4-cA-B82" customClass="SingleSignViewController" customModule="Traffy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uVe-qX-0j5">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dc-BK-Npw">
-                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="VRO-Qe-oq4">
                                         <rect key="frame" x="0.0" y="15" width="390" height="1565"/>
@@ -1245,6 +1246,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eGL-ij-xo6"/>
+                    <connections>
+                        <outlet property="discoverLabel" destination="41v-B7-Biu" id="RFU-M7-1ER"/>
+                        <outlet property="signDescriptionLabel" destination="9sm-bT-J51" id="RJ6-4v-plW"/>
+                        <outlet property="signIDLabel" destination="Hh5-4W-KcX" id="r0r-HE-FZ4"/>
+                        <outlet property="signImageView" destination="ESl-FX-gkM" id="v8C-wO-RC5"/>
+                        <outlet property="signNameLabel" destination="HdM-T4-SHF" id="FtA-MF-rxT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjT-q2-Q6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

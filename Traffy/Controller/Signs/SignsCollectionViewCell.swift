@@ -8,8 +8,6 @@
 import UIKit
 
 class SignsCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var signImageView: UIImageView!
     @IBOutlet weak var signNameLabel: UILabel!
-    
 }

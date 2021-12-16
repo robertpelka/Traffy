@@ -13,6 +13,7 @@ class SignsViewController: UIViewController {
     
     var category: SignType = .warning
     var signs = [Sign]()
+    var selectedSign: Sign?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +62,22 @@ class SignsViewController: UIViewController {
                 self.signs.sort { $0.id.localizedStandardCompare($1.id) == ComparisonResult.orderedAscending }
                 self.signsCollectionView.reloadData()
             }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedSign = signs[indexPath.row]
+        performSegue(withIdentifier: K.Segues.goToSingleSignView, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Segues.goToSingleSignView {
+            let singleSignVC = segue.destination as! SingleSignViewController
+            guard let selectedSign = selectedSign else {
+                print("DEBUG: Error unwraping selected sign.")
+                return
+            }
+            singleSignVC.sign = selectedSign
         }
     }
     

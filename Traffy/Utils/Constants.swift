@@ -28,6 +28,7 @@ struct K {
     
     struct Segues {
         static let goToSignsView = "goToSignsView"
+        static let goToSingleSignView = "goToSingleSignView"
     }
     
     static let numberOfQuestions = 2276
