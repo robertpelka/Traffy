@@ -23,7 +23,7 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         prepareView()
         fetchUser()
     }
@@ -80,6 +80,9 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func recognizeSignButtonPressed(_ sender: UIButton) {
+        let _ = tabBarController?.viewControllers?[2].children[0].view // preload CategoriesView, so it can receive notifications
+        tabBarController?.selectedIndex = 2
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: K.Notifications.recognizeSignButtonPressed), object: nil)
     }
     
 }

@@ -1043,6 +1043,7 @@
                         <outlet property="warningSignsButton" destination="pcx-22-s1y" id="pbo-vv-14Y"/>
                         <outlet property="warningSignsLabel" destination="pdT-g0-gfB" id="Zwk-Wz-mDI"/>
                         <segue destination="l1I-sZ-klg" kind="show" identifier="goToSignsView" id="90J-LE-537"/>
+                        <segue destination="3m4-cA-B82" kind="presentation" identifier="presentSignModally" id="aAz-U5-T78"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ys1-tJ-2i2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1133,11 +1134,11 @@
             <objects>
                 <viewController id="3m4-cA-B82" customClass="SingleSignViewController" customModule="Traffy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uVe-qX-0j5">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dc-BK-Npw">
-                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="VRO-Qe-oq4">
                                         <rect key="frame" x="0.0" y="15" width="390" height="1565"/>
@@ -1892,6 +1893,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="aAz-U5-T78"/>
         <segue reference="H1x-CD-PvR"/>
     </inferredMetricsTieBreakers>
     <resources>
