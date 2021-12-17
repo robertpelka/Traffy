@@ -30,10 +30,15 @@ class CategoriesViewController: UIViewController {
     @IBOutlet weak var discoverSignButton: UIButton!
     
     var category: SignType = .warning
+    let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        imagePicker.allowsEditing = true
+        
         prepareView()
     }
     
@@ -67,6 +72,7 @@ class CategoriesViewController: UIViewController {
     }
     
     @IBAction func discoverSignButtonPressed(_ sender: UIButton) {
+        present(imagePicker, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -76,4 +82,16 @@ class CategoriesViewController: UIViewController {
         }
     }
     
+}
+
+//MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+
+extension CategoriesViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[.editedImage] as? UIImage {
+            print("DEBUG: image picked")
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
 }
