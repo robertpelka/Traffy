@@ -34,6 +34,7 @@ class CategoriesViewController: UIViewController {
     var category: SignType = .warning
     let imagePicker = UIImagePickerController()
     var detectedSign: Sign?
+    var discoveredSignsIDs = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +49,19 @@ class CategoriesViewController: UIViewController {
     }
     
     func prepareView() {
+        lockButtons()
+        
         warningSignsButton.layer.cornerRadius = 15
         prohibitionSignsButton.layer.cornerRadius = 15
         mandatorySignsButton.layer.cornerRadius = 15
         informationSignsButton.layer.cornerRadius = 15
         
         discoverSignButton.layer.cornerRadius = 15
+        
+        fetchDiscoveredSignsIDs {
+            self.updateSignsLabels()
+            self.unlockButtons()
+        }
     }
     
     @IBAction func warningSignsButtonPressed(_ sender: UIButton) {
@@ -84,6 +92,20 @@ class CategoriesViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    func lockButtons() {
+        warningSignsButton.isUserInteractionEnabled = false
+        prohibitionSignsButton.isUserInteractionEnabled = false
+        mandatorySignsButton.isUserInteractionEnabled = false
+        informationSignsButton.isUserInteractionEnabled = false
+    }
+    
+    func unlockButtons() {
+        warningSignsButton.isUserInteractionEnabled = true
+        prohibitionSignsButton.isUserInteractionEnabled = true
+        mandatorySignsButton.isUserInteractionEnabled = true
+        informationSignsButton.isUserInteractionEnabled = true
+    }
+    
     func detectSign(image: CIImage) {
         let signsClassifier: SignsClassifier = {
             do {
@@ -108,7 +130,9 @@ class CategoriesViewController: UIViewController {
                 return
             }
             if let firstResult = results.first {
-                self.fetchSign(withID: firstResult.identifier)
+                let signName = firstResult.identifier
+                self.saveDiscoveredSign(withName: signName)
+                self.fetchSign(withID: signName)
             }
         }
         
@@ -142,10 +166,89 @@ class CategoriesViewController: UIViewController {
         }
     }
     
+    func saveDiscoveredSign(withName signName: String) {
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
+            print("DEBUG: Error getting current user id.")
+            return
+        }
+        
+        K.Collections.users.document(currentUserID).collection("discoveredSigns").document(signName).getDocument { snapshot, error in
+            if let error = error {
+                print("DEBUG: Error fetching discovered sign: \(error.localizedDescription)")
+                return
+            }
+            
+            if snapshot?.exists != true {
+                K.Collections.users.document(currentUserID).collection("discoveredSigns").document(signName).setData([:]) { error in
+                    if let error = error {
+                        print("DEBUG: Error saving discovered sign: \(error.localizedDescription)")
+                        return
+                    }
+                    
+                    K.Collections.users.document(currentUserID).updateData(["discoveredSignsNumber" : FieldValue.increment(Int64(1))]) { error in
+                        if let error = error {
+                            print("DEBUG: Error updating number of discovered signs: \(error.localizedDescription)")
+                            return
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func fetchDiscoveredSignsIDs(completion: @escaping () -> Void) {
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
+            print("DEBUG: Error getting current user id.")
+            return
+        }
+        
+        K.Collections.users.document(currentUserID).collection("discoveredSigns").addSnapshotListener { snapshot, error in
+            if let error = error {
+                print("DEBUG: Error fetching discovered signs: \(error.localizedDescription)")
+                return
+            }
+            self.discoveredSignsIDs = [String]()
+            if let documents = snapshot?.documents {
+                for document in documents {
+                    self.discoveredSignsIDs.append(document.documentID)
+                }
+                completion()
+            }
+        }
+    }
+    
+    func updateSignsLabels() {
+        var warningSignsNumber = 0
+        var prohibitionSignsNumber = 0
+        var mandatorySignsNumber = 0
+        var informationSignsNumber = 0
+        
+        for signID in discoveredSignsIDs {
+            switch signID.prefix(1) {
+            case "A":
+                warningSignsNumber += 1
+            case "B":
+                prohibitionSignsNumber += 1
+            case "C":
+                mandatorySignsNumber += 1
+            case "D":
+                informationSignsNumber += 1
+            default:
+                break
+            }
+        }
+        
+        warningSignsLabel.text = "\(warningSignsNumber)/\(K.numberOfWarningSigns)"
+        prohibitionSignsLabel.text = "\(prohibitionSignsNumber)/\(K.numberOfProhibitionSigns)"
+        mandatorySignsLabel.text = "\(mandatorySignsNumber)/\(K.numberOfMandatorySigns)"
+        informationSignsLabel.text = "\(informationSignsNumber)/\(K.numberOfInformationSigns)"
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.Segues.goToSignsView {
             let signsVC = segue.destination as! SignsViewController
             signsVC.category = category
+            signsVC.discoveredSignsIDs = discoveredSignsIDs
         }
         else if segue.identifier == K.Segues.presentSignModally {
             let singleSignVC = segue.destination as! SingleSignViewController

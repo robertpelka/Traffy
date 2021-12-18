@@ -14,6 +14,7 @@ class SignsViewController: UIViewController {
     var category: SignType = .warning
     var signs = [Sign]()
     var selectedSign: Sign?
+    var discoveredSignsIDs = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +79,9 @@ class SignsViewController: UIViewController {
                 return
             }
             singleSignVC.sign = selectedSign
+            if !discoveredSignsIDs.contains(selectedSign.id) {
+                singleSignVC.isDiscovered = false
+            }
         }
     }
     
@@ -96,6 +100,15 @@ extension SignsViewController: UICollectionViewDataSource {
         let cell = signsCollectionView.dequeueReusableCell(withReuseIdentifier: K.Identifiers.signCell, for: indexPath) as! SignsCollectionViewCell
         cell.signNameLabel.text = sign.id
         cell.signImageView.load(url: URL(string: sign.image))
+        
+        if discoveredSignsIDs.contains(sign.id) {
+            cell.signImageView.alpha = 1.0
+            cell.signNameLabel.alpha = 1.0
+        }
+        else {
+            cell.signImageView.alpha = 0.3
+            cell.signNameLabel.alpha = 0.3
+        }
         
         return cell
     }

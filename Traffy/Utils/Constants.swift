@@ -37,5 +37,9 @@ struct K {
     }
     
     static let numberOfQuestions = 2276
-    static let numberOfSigns = 70
+    static let numberOfSigns = 88
+    static let numberOfWarningSigns = 25
+    static let numberOfProhibitionSigns = 20
+    static let numberOfMandatorySigns = 11
+    static let numberOfInformationSigns = 32
 }

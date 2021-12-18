@@ -16,6 +16,7 @@ class SingleSignViewController: UIViewController {
     @IBOutlet weak var signDescriptionLabel: UILabel!
 
     var sign: Sign?
+    var isDiscovered = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,13 @@ class SingleSignViewController: UIViewController {
         signIDLabel.text = sign.id
         signNameLabel.text = sign.name
         signDescriptionLabel.text = sign.description
+        
+        if isDiscovered {
+            discoverLabel.text = "Odkryłeś ten znak."
+        }
+        else {
+            discoverLabel.text = "Jeszcze nie odkryłeś tego znaku."
+        }
     }
     
 }
