@@ -8,15 +8,17 @@
 import UIKit
 
 class CustomProgressView: UIProgressView {
-
+    
     override func layoutSubviews() {
-            super.layoutSubviews()
-
-            let maskLayerPath = UIBezierPath(roundedRect: bounds, cornerRadius: 7)
-            let maskLayer = CAShapeLayer()
-            maskLayer.frame = self.bounds
-            maskLayer.path = maskLayerPath.cgPath
-            layer.mask = maskLayer
-        }
-
+        super.layoutSubviews()
+        
+        let radius = frame.height / 2
+        
+        layer.cornerRadius = radius
+        clipsToBounds = true
+        
+        layer.sublayers?[1].cornerRadius = radius
+        subviews[1].clipsToBounds = true
+    }
+    
 }
