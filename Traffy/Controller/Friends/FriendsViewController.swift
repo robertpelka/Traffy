@@ -86,7 +86,12 @@ class FriendsViewController: UIViewController {
                     for document in documents {
                         do {
                             if let friend = try document.data(as: User.self) {
-                                friendsChunk.append(friend)
+                                if self.friendsIDs.contains(friend.id) {
+                                    friendsChunk.append(friend)
+                                }
+                                if let index = self.friends.firstIndex(where: {$0.id == friend.id}) {
+                                    self.friends.remove(at: index)
+                                }
                             }
                         }
                         catch let error {
